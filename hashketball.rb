@@ -1,3 +1,5 @@
+require "pry"
+
 def game_hash
   game_hash = {
     :home => {
@@ -136,7 +138,14 @@ def game_hash
 end
 
 
-
+def num_points_scored(player_name)
+  
+  player_name == game_hash[:player_name]
+    
+  game_hash.dig(:home, :players, :player_name, :points)  
+          
+          binding.pry
+end
 
 
 
