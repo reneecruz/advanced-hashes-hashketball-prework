@@ -154,26 +154,32 @@ def home_team_name(team_name)
 end
 
 def team_colors(team_name)
-
-  team = game_hash.find do |team, team_attributes|
-    team_attributes[:team_name] == team_name
-   end 
-  team[:colors]
-
-  team = game_hash.select do |team, team_attributes|
-    team_attributes[:colors]
-      binding.pry
-    end
-    
-    colors = game_hash.map do |team, team_attributes|
-    team_attributes[:colors]
-    end
-  
-  team_colors = 
-    game_hash.map do |location, team_attributes|
-      location[:colors]
+  game_hash.each do |place,team|
+    if team[:team_name] == team_name
+      return team[:colors]
     end
   end
+end
+
+  # team = game_hash.find do |team, team_attributes|
+  #   team_attributes[:team_name] == team_name
+  # end 
+  # team[:colors]
+
+  # team = game_hash.select do |team, team_attributes|
+  #   team_attributes[:colors]
+  #     binding.pry
+  #   end
+    
+  #   colors = game_hash.map do |team, team_attributes|
+  #   team_attributes[:colors]
+  #   end
+  
+  # team_colors = 
+  #   game_hash.map do |location, team_attributes|
+  #     location[:colors]
+  #   end
+  #end
   
 #helper method
 # def players(game_hash)
