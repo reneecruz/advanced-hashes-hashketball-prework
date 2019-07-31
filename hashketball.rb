@@ -150,14 +150,22 @@ def shoe_size(player_name)
 
 end
 
+def home_team_name(team_name)
+  game_hash[:home]
+end
+
 def team_colors(team_name)
   
- find_team = game_hash.find do |team|
-   team[:team_name] == team_name
+  team = game_hash.select do |team, team_attributes|
+    team_attributes[:colos]
+      #binding.pry
+    end
+    
+    colors = game_hash.map do |team, team_attributes|
+    team_attributes[:colors]
   end
   
-  find_team[:colors]
-  
+
 end
 
 #helper method
