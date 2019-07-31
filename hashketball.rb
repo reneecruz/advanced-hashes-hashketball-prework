@@ -123,10 +123,19 @@ def num_points_scored(player_name)
   
  players = game_hash.map do |team, team_attributes|
    team_attributes[:players]
-     binding.pry
- end
- #players.flatten
- 
+ end.flatten
+
+  player = players.find |player| do 
+    player[:player_name] == player_name
+  end
+  # players.each do |player|
+  #   if player[:player_name] == player_name
+  #     player[:points]
+  #   end
+  player[:points]
+  end
+   #binding.pry
+  
 end
 
 
