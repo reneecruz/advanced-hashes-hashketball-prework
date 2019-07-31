@@ -146,7 +146,7 @@ def shoe_size(player_name)
     player[:player_name] == player_name
   end
   
-  player[:shoe_size]
+  player[:shoe]
 
 end
 
