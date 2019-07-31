@@ -136,6 +136,20 @@ def num_points_scored(player_name)
    #binding.pry
 end
 
+def shoe_size(player_name)
+  
+ players = game_hash.map do |team, team_attributes|
+   team_attributes[:players]
+ end.flatten
+ 
+  player = players.find do |player| 
+    player[:player_name] == player_name
+  end
+  
+  player[:shoe_size]
+
+end
+
 #helper method
 # def players(game_hash)
 #     game_hash.map do |team, team_attributes|
@@ -151,9 +165,12 @@ end
 # end
 
 #def num_points_scored(player_name)
-# find_player(players)
-# player[:points]
+# find_player(players, player_name)[:points]
 # end
 
-
+#generic function to search 
+# def find_any_attribute_about_any_player_generic(player_name, string)
+#   attribute = string.to_sym
+#   find_player(players, player_name)[attribute]
+# end
 
