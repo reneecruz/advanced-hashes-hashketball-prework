@@ -125,7 +125,7 @@ def num_points_scored(player_name)
    team_attributes[:players]
  end.flatten
 
-  player = players.find |player| do 
+  player = players.find do |player| 
     player[:player_name] == player_name
   end
   # players.each do |player|
@@ -134,7 +134,6 @@ def num_points_scored(player_name)
   #   end
   player[:points]
    #binding.pry
-  
 end
 
 
