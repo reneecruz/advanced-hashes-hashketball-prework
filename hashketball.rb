@@ -121,11 +121,12 @@ end
 
 def num_points_scored(player_name)
   
-  player_name == game_hash[:player_name]
-    
-  game_hash.dig(:home, :players, :player_name, :points)  
-          
-          binding.pry
+ players = game_hash.map do |team, team_attributes|
+   team_attributes[:players]
+     binding.pry
+ end
+ #players.flatten
+ 
 end
 
 
