@@ -147,7 +147,6 @@ def shoe_size(player_name)
     end
   
   player[:shoe]
-
 end
 
 def home_team_name(team_name)
@@ -160,7 +159,6 @@ def team_colors(team_name)
     team_attributes[:team_name] == team_name
    end 
   team[:colors]
-    
 end
   
 
