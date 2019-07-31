@@ -155,18 +155,15 @@ def home_team_name(team_name)
 end
 
 def team_colors(team_name)
-  
-  team = game_hash.select do |team, team_attributes|
-    team_attributes[:colos]
-      #binding.pry
-    end
+
+  team = game_hash.find do |team, team_attributes|
+    team_attributes[:team_name] == team_name
+   end 
+  team[:colors]
     
-    colors = game_hash.map do |team, team_attributes|
-    team_attributes[:colors]
-  end
+end
   
 
-end
 
 #helper method
 # def players(game_hash)
