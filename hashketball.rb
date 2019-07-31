@@ -136,7 +136,19 @@ def num_points_scored(player_name)
    #binding.pry
 end
 
+#helper method
+# def players(game_hash)
+#     game_hash.map do |team, team_attributes|
+#         team_attributes[:players]
+#       end.flatten
+# end
 
+#helper method
+# def find_player(players_array, player)
+#   players_array.find do |player| 
+#       player[:player_name] == player_name
+#     end
+# end
 
 
 
