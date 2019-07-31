@@ -48,7 +48,8 @@ def game_hash
             :slam_dunks => 5
           }, { 
             :player_name => "Jason Terry", 
-            :number => 31, 
+            :number => 31,
+            :shoe => 15,
             :points => 19,
             :rebounds => 12,
             :assists => 12,
@@ -122,8 +123,8 @@ end
 def num_points_scored(player_name)
   
  players = game_hash.map do |team, team_attributes|
-   team_attributes[:players]
- end.flatten
+    team_attributes[:players]
+  end.flatten
 
   player = players.find do |player| 
     player[:player_name] == player_name
@@ -133,22 +134,22 @@ def num_points_scored(player_name)
   #     player[:points]
   #   end
   player[:points]
-   #binding.pry
 end
 
 def shoe_size(player_name)
-  
+
  players = game_hash.map do |team, team_attributes|
    team_attributes[:players]
- end.flatten
- 
+  end.flatten
+  
   player = players.find do |player| 
     player[:player_name] == player_name
-  end
+    end
   
   player[:shoe]
 
 end
+ #binding.pry
 
 #helper method
 # def players(game_hash)
