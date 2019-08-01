@@ -167,26 +167,15 @@ def team_names
   end
 end
 
-  # team = game_hash.find do |team, team_attributes|
-  #   team_attributes[:team_name] == team_name
-  # end 
-  # team[:colors]
+# team_names solved with .each
+# def team_names
+#   new_array = []
+#   game_hash.each do |place, team|
+#   new_array << team[:team_name]
+#     end
+# new_array
+# end
 
-  # team = game_hash.select do |team, team_attributes|
-  #   team_attributes[:colors]
-  #     binding.pry
-  #   end
-    
-  #   colors = game_hash.map do |team, team_attributes|
-  #   team_attributes[:colors]
-  #   end
-  
-  # team_colors = 
-  #   game_hash.map do |location, team_attributes|
-  #     location[:colors]
-  #   end
-  #end
-  
 #helper method
 # def players(game_hash)
 #     game_hash.map do |team, team_attributes|
