@@ -161,6 +161,12 @@ def team_colors(team_name)
   end
 end
 
+def team_names
+  game_hash.map do |place, team|
+    team[:team_name]
+  end
+end
+
   # team = game_hash.find do |team, team_attributes|
   #   team_attributes[:team_name] == team_name
   # end 
