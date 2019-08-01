@@ -167,6 +167,22 @@ def team_names
   end
 end
 
+def player_numbers(team_name)
+  jersey_numbers = []
+  game_hash.each do |place, team|
+    if team[:team_name] == team_name
+      team.each do |attributes, data|
+        if attributes == :players
+          data.each do |player|
+            jersey_numbers << player[:number]
+          end
+        end
+      end
+    end
+  end
+  jersey_numbers
+end
+
 # team_names solved with .each
 # def team_names
 #   new_array = []
