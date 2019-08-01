@@ -200,6 +200,26 @@ def player_stats(players_name)
   end
   new_hash
 end
+
+def big_shoe_rebounds
+   shoe_array = game_hash.map do |place, team|
+    team.each do |attributes, data|
+         binding.pry
+      attributes.each do |data|
+         
+        if data == :players
+          data.each do |player| 
+              player[:shoe]
+             
+            end
+           
+         end
+      end
+    end
+  end
+    #shoe_array.flatten
+  #return number of rebounds associated w/ largest shoe size
+end
 # team_names solved with .each
 # def team_names
 #   new_array = []
