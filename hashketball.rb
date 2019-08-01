@@ -154,6 +154,7 @@ def home_team_name(team_name)
 end
 
 def team_colors(team_name)
+
   game_hash.each do |place,team|
     if team[:team_name] == team_name
       return team[:colors]
@@ -201,25 +202,34 @@ def player_stats(players_name)
   new_hash
 end
 
+
+
 def big_shoe_rebounds
-   shoe_array = game_hash.map do |place, team|
-    team.each do |attributes, data|
-         binding.pry
-      attributes.each do |data|
-         
-        if data == :players
-          data.each do |player| 
-              player[:shoe]
-             
-            end
-           
-         end
+  
+   player_stats_array = game_hash.map do |place, team|
+    team[:players].map do |player|
+      player
       end
+  end.flatten
+
+  shoe_array = player_stats_array.map do |player|
+    player.key(:shoe)
+    player[:shoe]
+  end
+    #binding.pry
+    
+  player_stats_array.each do |player|
+    if player[:shoe] == shoe_array.max
+      return player[:rebounds]
     end
   end
-    #shoe_array.flatten
+
   #return number of rebounds associated w/ largest shoe size
 end
+
+
+
+
 # team_names solved with .each
 # def team_names
 #   new_array = []
@@ -229,6 +239,30 @@ end
 # new_array
 # end
 
+#   game_hash[:team].key(team_name) == team_name
+#   binding.pry
+# end
+
+  # team = game_hash.find do |team, team_attributes|
+  #   team_attributes[:team_name] == team_name
+  # end 
+  # team[:colors]
+
+  # team = game_hash.select do |team, team_attributes|
+  #   team_attributes[:colors]
+  #     binding.pry
+  #   end
+    
+  #   colors = game_hash.map do |team, team_attributes|
+  #   team_attributes[:colors]
+  #   end
+  
+  # team_colors = 
+  #   game_hash.map do |location, team_attributes|
+  #     location[:colors]
+  #   end
+  #end
+  
 #helper method
 # def players(game_hash)
 #     game_hash.map do |team, team_attributes|
