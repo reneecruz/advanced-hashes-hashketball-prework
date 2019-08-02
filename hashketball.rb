@@ -237,7 +237,6 @@ def most_points_scored
     player.key(:points)
     player[:points]
   end
-    #binding.pry
     
   player_stats_array.each do |player|
     if player[:points] == points_array.max
