@@ -259,7 +259,8 @@ def winning_team
   end
   
   game_hash.find do |team|
-    points_array.reduce(:+).max
+    points_array.reduce(:+)
+    
     team[:team_name]
   end
 end
