@@ -258,7 +258,7 @@ def winning_team
     player[:points]
   end
   
-  points_array.reduce
+  points_array.reduce(:+)
 end
 
 
