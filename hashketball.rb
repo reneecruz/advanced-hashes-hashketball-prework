@@ -258,10 +258,8 @@ def winning_team
     player[:points]
   end
   
-  game_hash.find do |team|
+  total_team_points = game_hash.find do |team|
     points_array.reduce(:+)
-    
-    team[:team_name]
   end
 end
 
