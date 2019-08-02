@@ -224,7 +224,6 @@ def big_shoe_rebounds
     #return number of rebounds associated w/ largest shoe size
     end
   end
- 
 end
 
 def most_points_scored
