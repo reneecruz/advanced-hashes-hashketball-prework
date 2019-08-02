@@ -221,10 +221,10 @@ def big_shoe_rebounds
   player_stats_array.each do |player|
     if player[:shoe] == shoe_array.max
       return player[:rebounds]
+    #return number of rebounds associated w/ largest shoe size
     end
   end
-
-  #return number of rebounds associated w/ largest shoe size
+ 
 end
 
 def most_points_scored
