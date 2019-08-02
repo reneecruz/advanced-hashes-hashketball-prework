@@ -221,10 +221,9 @@ def big_shoe_rebounds
   player_stats_array.each do |player|
     if player[:shoe] == shoe_array.max
       return player[:rebounds]
+    #return number of rebounds associated w/ largest shoe size
     end
   end
-
-  #return number of rebounds associated w/ largest shoe size
 end
 
 def most_points_scored
@@ -238,13 +237,61 @@ def most_points_scored
     player.key(:points)
     player[:points]
   end
-    #binding.pry
     
   player_stats_array.each do |player|
     if player[:points] == points_array.max
       return player[:player_name]
     end
   end
+end
+
+
+def winning_team
+  
+   player_stats_array = game_hash.map do |place, team|
+    team[:players].map do |player|
+      player
+      end
+    end.flatten
+
+  points_array = player_stats_array.map do |player|
+    if game_hash[:home][:players][:player_name] == player
+       binding.pry
+    player.key(:points)
+    player[:points]
+        
+    end
+      points_array.reduce(:+)
+    end
+  
+  home_points_array = 
+    game_hash.map do |place, team|
+      place == [:home]
+        team[:players].map do |attributes, data|
+          attributes[:points]
+         
+          end
+         
+          
+         end
+      
+      
+           
+  
+   away_team_total_points = game_hash.each do |place, team|
+     if place == :away
+        team.each do |players|
+        points_array.reduce(:+)
+       
+      end
+    end
+  end
+  
+  
+  #total_team_points = game_hash.find do |team|
+    #team
+  
+  #end
 end
 
 
