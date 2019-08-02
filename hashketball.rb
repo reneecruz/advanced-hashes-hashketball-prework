@@ -252,7 +252,6 @@ def winning_team
       player
       end
   end.flatten
-  binding.pry
 
   points_array = player_stats_array.map do |player|
     player.key(:points)
