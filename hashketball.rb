@@ -257,6 +257,8 @@ def winning_team
     player.key(:points)
     player[:points]
   end
+  
+  points_array.reduce
 end
 
 
