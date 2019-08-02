@@ -286,4 +286,3 @@ end
 #   attribute = string.to_sym
 #   find_player(players, player_name)[attribute]
 # end
-
