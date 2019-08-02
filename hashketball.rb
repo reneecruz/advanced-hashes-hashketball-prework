@@ -248,50 +248,40 @@ end
 
 def winning_team
   
-   player_stats_array = game_hash.map do |place, team|
-    team[:players].map do |player|
+  home_player_stats_array = 
+    game_hash[:home][:players].map do |player|
       player
-      end
-    end.flatten
-
-  points_array = player_stats_array.map do |player|
-    if game_hash[:home][:players][:player_name] == player
-       binding.pry
-    player.key(:points)
-    player[:points]
+      end.flatten
+      
+  away_player_stats_array = 
+    game_hash[:away][:players].map do |player|
+      player
+      end.flatten
+    
+    home_team = game_hash[:home][:team_name]
+    away_team = game_hash[:away][:team_name]
+ 
+    home_points_array = 
+      home_player_stats_array.map do |player|
+        player.key(:points)
+        player[:points]
+        end
         
+    away_points_array = 
+      away_player_stats_array.map do |player|
+        player.key(:points)
+        player[:points]
+        end
+              
+    home_total_points = home_points_array.reduce(:+)
+    away_total_points = away_points_array.reduce(:+)
+    
+    
+    if home_total_points > away_total_points 
+      return home_team
+    else 
+      return away_team
     end
-      points_array.reduce(:+)
-    end
-  
-  home_points_array = 
-    game_hash.map do |place, team|
-      place == [:home]
-        team[:players].map do |attributes, data|
-          attributes[:points]
-         
-          end
-         
-          
-         end
-      
-      
-           
-  
-   away_team_total_points = game_hash.each do |place, team|
-     if place == :away
-        team.each do |players|
-        points_array.reduce(:+)
-       
-      end
-    end
-  end
-  
-  
-  #total_team_points = game_hash.find do |team|
-    #team
-  
-  #end
 end
 
 
