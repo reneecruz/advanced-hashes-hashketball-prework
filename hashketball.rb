@@ -248,6 +248,8 @@ end
 
 def winning_team
 end
+
+
 # team_names solved with .each
 # def team_names
 #   new_array = []
