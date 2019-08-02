@@ -247,6 +247,16 @@ end
 
 
 def winning_team
+   player_stats_array = game_hash.map do |place, team|
+    team[:players].map do |player|
+      player
+      end
+  end.flatten
+
+  points_array = player_stats_array.map do |player|
+    player.key(:points)
+    player[:points]
+  end
 end
 
 
