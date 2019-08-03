@@ -226,6 +226,8 @@ def big_shoe_rebounds
   end
 end
 
+
+
 def most_points_scored
    player_stats_array = game_hash.map do |place, team|
     team[:players].map do |player|
@@ -276,12 +278,28 @@ def winning_team
     home_total_points = home_points_array.reduce(:+)
     away_total_points = away_points_array.reduce(:+)
     
-    
     if home_total_points > away_total_points 
       return home_team
     else 
       return away_team
     end
+end
+
+
+def player_with_longest_name
+  
+    player_stats_array = game_hash.map do |place, team|
+      team[:players].map do |player|
+      player
+      end
+    end.flatten
+  
+    player_name_array = player_stats_array.map do |player|
+      player.key(:player_name)
+      player[:player_name]
+    end
+    
+  player_name_array.max_by { |word| word.length }
 end
 
 
