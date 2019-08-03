@@ -303,6 +303,29 @@ def player_with_longest_name
 end
 
 
+def long_name_steals_a_ton?
+  
+    player_stats_array = game_hash.map do |place, team|
+      team[:players].map do |player|
+      player
+      end
+    end.flatten
+  
+    player_steals_array = player_stats_array.map do |player|
+      player.key(:player_name)
+      player.key(:steals)
+      player[:player_name]
+      player[:steals]
+    end
+    
+    most_steals = player_steals_array.max
+    longest_name = player_with_longest_name
+    
+    player_stats_array.any? { |player| player[:player_name] == longest_name && player[:steals] == most_steals }
+    #binding.pry
+end
+
+
 # team_names solved with .each
 # def team_names
 #   new_array = []
